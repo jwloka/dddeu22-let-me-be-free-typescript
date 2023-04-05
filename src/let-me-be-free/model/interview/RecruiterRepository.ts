@@ -1,5 +1,5 @@
-import Recruiter from "../../../shared-kernel/model/Recruiter";
+import { Recruiter } from "../../../shared-kernel";
 
 export interface RecruiterRepository {
-  findAll: () => Recruiter[]
+    findAll: () => Recruiter[];
 }
