@@ -1,8 +1,8 @@
 import { Candidate, Recruiter } from "../../shared-kernel";
-import { FakeRecruiterRepository } from "../model";
-import { FakeRoomRepository } from "../model";
-import { RecruiterRepository } from "../model";
+import { FakeRecruiterRepository, FakeRoomRepository, RecruiterRepository } from "../model";
 import { PlanInterview } from "./PlanInterview";
+
+const FUTURE_DATE_3 = new Date(new Date().setHours(0, 0, 0, 0) + 3 * (3600 * 1000 * 24));
 
 describe("PlanInterview", () => {
     const CANDIDATE_ID = "fake_id";
@@ -16,7 +16,7 @@ describe("PlanInterview", () => {
     });
 
     it("should not schedule an interview for a candidate without identifier", () => {
-        const interviewDate = new Date(2022, 12, 19);
+        const interviewDate = FUTURE_DATE_3;
         const candidateWithoutId = new Candidate(
             "",
             "",
@@ -62,7 +62,7 @@ describe("PlanInterview", () => {
     });
 
     it("should plan an interview with the first recruiter who is available for the interview and can test the candidate", () => {
-        const interviewDate = new Date(2022, 12, 19);
+        const interviewDate = FUTURE_DATE_3;
 
         const interview = humanResource.scheduleInterview(interviewDate, getJavaCandidate());
 

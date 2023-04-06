@@ -11,6 +11,7 @@
         "start:dev": "nodemon",
         "build": "tsc",
         "watch": "tsc --watch",
+        "watch:test": "jest --watch",
         "dist": "yarn clean && yarn test && yarn build"
     },
     "repository": {
