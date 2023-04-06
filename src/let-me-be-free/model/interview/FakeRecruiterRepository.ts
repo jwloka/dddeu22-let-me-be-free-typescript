@@ -3,6 +3,10 @@ import { HRRecruiter } from "./HRRecruiter";
 import { RecruiterRepository } from "./RecruiterRepository";
 
 export class FakeRecruiterRepository implements RecruiterRepository {
+    private readonly FUTURE_DATE_1 = new Date(new Date().setHours(0, 0, 0, 0) + 3600 * 1000 * 24);
+    private readonly FUTURE_DATE_2 = new Date(new Date().setHours(0, 0, 0, 0) + 2 * (3600 * 1000 * 24));
+    private readonly FUTURE_DATE_3 = new Date(new Date().setHours(0, 0, 0, 0) + 3 * (3600 * 1000 * 24));
+
     public readonly _recruiters: Recruiter[];
 
     constructor() {
@@ -15,7 +19,7 @@ export class FakeRecruiterRepository implements RecruiterRepository {
                 5,
                 ["Java"],
                 "",
-                [new Date(2022, 12, 22), new Date(2022, 12, 20)],
+                [this.FUTURE_DATE_1, this.FUTURE_DATE_2],
                 [
                     new Candidate(
                         "951",
@@ -64,7 +68,7 @@ export class FakeRecruiterRepository implements RecruiterRepository {
                 <number>{},
                 ["Java", "PHP"],
                 "",
-                [new Date(2022, 12, 21), new Date(2022, 12, 22)],
+                [new Date(2022, 12, 21), this.FUTURE_DATE_1],
                 [],
                 "",
                 <number>{},
@@ -82,7 +86,7 @@ export class FakeRecruiterRepository implements RecruiterRepository {
                 2,
                 ["PHP"],
                 "",
-                [new Date(2022, 12, 19)],
+                [this.FUTURE_DATE_3],
                 [
                     new Candidate(
                         "654",
@@ -131,7 +135,7 @@ export class FakeRecruiterRepository implements RecruiterRepository {
                 <number>{},
                 ["PHP", "Java"],
                 "",
-                [new Date(2022, 12, 19), new Date(2022, 12, 22)],
+                [this.FUTURE_DATE_3, this.FUTURE_DATE_1],
                 [],
                 "",
                 <number>{},
