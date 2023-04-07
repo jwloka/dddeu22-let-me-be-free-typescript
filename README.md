@@ -1,4 +1,6 @@
-# Domain
+# TODOs
+
+## Domain
 
 This is an application to help HR to manage interviews.
 
