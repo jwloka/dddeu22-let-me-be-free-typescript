@@ -1,34 +1,29 @@
-import {RoomRepository} from "./RoomRepository";
-import Space from "../../../shared-kernel/model/Space";
-import Recruiter from "../../../shared-kernel/model/Recruiter";
-import InterviewDate from "./InterviewDate";
-import Room from "./Room";
+import { Recruiter, Space } from "../../../shared-kernel";
+import { InterviewDate } from "./InterviewDate";
+import { Room } from "./Room";
+import { RoomRepository } from "./RoomRepository";
 
-export default class FakeRoomRepository implements RoomRepository {
+export class FakeRoomRepository implements RoomRepository {
+    private readonly FUTURE_DATE_1 = new Date(new Date().setHours(0, 0, 0, 0) + 3600 * 1000 * 24);
+    private readonly FUTURE_DATE_2 = new Date(new Date().setHours(0, 0, 0, 0) + 2 * (3600 * 1000 * 24));
 
-  book(interviewDate: InterviewDate): Room {
-    return new Room(new Space("",
-        "",
-        "Paris",
-        5,
-        "Room 2.1",
-        ["PC", "Monitor"],
-        "John Doe & HR",
-        [
-          new Date(2022, 12, 22),
-          new Date(2022, 12, 20)
-        ],
-        <Recruiter>{},
-        new Map<string, object>([
-          ["Recruiter",
-            new Map<Date, string>([
-              [new Date(2022, 12, 22), "Steve Jones"]
-            ])
-          ]
-        ])
-    ));
-  }
+    book(interviewDate: InterviewDate): Room {
+        return new Room(
+            new Space(
+                "",
+                "",
+                "Paris",
+                5,
+                "Room 2.1",
+                ["PC", "Monitor"],
+                "John Doe & HR",
+                [this.FUTURE_DATE_1, this.FUTURE_DATE_2],
+                <Recruiter>{},
+                new Map<string, object>([["Recruiter", new Map<Date, string>([[this.FUTURE_DATE_1, "Steve Jones"]])]])
+            )
+        );
+    }
 
-  cancel(spaceId: String): void {
-  }
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    cancel(spaceId: string): void {}
 }
