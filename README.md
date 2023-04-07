@@ -1,4 +1,6 @@
-# Resume of Step 0
+# TODOs
+
+## Resume of Step 0
 
 We recognized that our HR System is polluted by the Shred Kernel data.
 As the Shared Kernel is Upstream and is used by other Downstream systems (like HR System) we are not allowed to modify it.

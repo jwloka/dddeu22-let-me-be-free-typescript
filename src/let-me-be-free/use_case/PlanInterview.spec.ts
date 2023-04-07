@@ -2,7 +2,7 @@ import { Candidate, Recruiter } from "../../shared-kernel";
 import { FakeRecruiterRepository, FakeRoomRepository, HRCandidate, InterviewDate, RecruiterRepository } from "../model";
 import { PlanInterview } from "./PlanInterview";
 
-const FUTURE_DATE = new Date(new Date().setHours(0, 0, 0, 0) + 3600 * 1000 * 24);
+const FUTURE_DATE_3 = new Date(new Date().setHours(0, 0, 0, 0) + 3 * (3600 * 1000 * 24));
 
 describe("PlanInterview", () => {
     const CANDIDATE_ID = "fake_id";
@@ -16,7 +16,7 @@ describe("PlanInterview", () => {
     });
 
     it("should not schedule an interview for a candidate without identifier", () => {
-        const interviewDate = new InterviewDate(FUTURE_DATE);
+        const interviewDate = new InterviewDate(FUTURE_DATE_3);
         const candidateWithoutId = new HRCandidate(
             new Candidate("", "", "", <Date>{}, <number>{}, [], "", "", <Recruiter>{}, "", false, "", new Map<string, object>())
         );
@@ -43,13 +43,13 @@ describe("PlanInterview", () => {
     });
 
     it("should plan interview with the first recruiter who is available for the interview and can test the candidate", () => {
-        const interviewDate = new InterviewDate(FUTURE_DATE);
+        const interviewDate = new InterviewDate(FUTURE_DATE_3);
 
         const interview = testObj.scheduleInterview(interviewDate, getJavaCandidate());
 
-        expect(interview!._recruiter.getId()).toBe("123");
-        expect(interview!._recruiter.getName()).toBe("Doe");
-        expect(interview!._recruiter.getFirstName()).toBe("John");
+        expect(interview!._recruiter.getId()).toBe("101");
+        expect(interview!._recruiter.getName()).toBe("Steve");
+        expect(interview!._recruiter.getFirstName()).toBe("Emma");
         expect(interview!._candidate.getId()).toBe(CANDIDATE_ID);
         expect(interview!._interviewDate).toBe(interviewDate);
         expect(interview!._room.getAddress()).toBe("Room 2.1");
