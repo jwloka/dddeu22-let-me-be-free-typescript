@@ -62,22 +62,8 @@ describe("PlanInterview", () => {
             .flatMap(r => r.getAvailabilities())
             .filter(availableDate => availableDate.equals(interviewDate)).length > 0;
 
-    const getJavaCandidate = (): Profile => {
-        const java = new Candidate(
-            PROFILE_ID,
-            "",
-            "",
-            <Date>{},
-            <number>{},
-            ["Java"],
-            "",
-            "",
-            <Recruiter>{},
-            "",
-            false,
-            "",
-            new Map<string, object>()
+    const getJavaCandidate = (): Profile =>
+        new Profile(
+            new Candidate(PROFILE_ID, "", "", <Date>{}, <number>{}, ["Java"], "", "", <Recruiter>{}, "", false, "", new Map<string, object>())
         );
-        return new Profile(java);
-    };
 });
