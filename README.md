@@ -2,6 +2,27 @@
 
 ## Domain
 
+The key use case of the domain can be described as follows:
+
+> As a Human Resource
+> I want to find an available Recruiter
+> According to my Candidate Availabilities
+> “Who can test”* my Candidate.
+
+Who can test: The Recruiter should cover all Candidate’s skills.
+
+## Ubiquitous Language
+
+- **Consultant**: A technical member of the company that should match the Profile of a Candidate
+- **Profile**: Resume of the Candidate
+- **Interview Date**: The day where Consultant & Candidate meet each other to do the evaluation
+- **Candidate**: Someone who applied to passe the interview process
+- **Interview**: A structured conversation where one participant asks questions, and the other provides answers
+- **Room**: A place where the Interview will take place
+- **Human Resource**: A member of HR department who will be in charged to organize the Interview
+
+## Requirements
+
 The business application helps HR to manage interviews. Interviews are scheduled for candidates.
 For every scheduled interview HR needs to find a matching recruiter and to book an available room.
 
