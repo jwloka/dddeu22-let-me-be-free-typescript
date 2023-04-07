@@ -63,6 +63,7 @@ describe("PlanInterview", () => {
 
     it("should plan an interview with the first recruiter who is available for the interview and can test the candidate", () => {
         const interviewDate = FUTURE_DATE_3;
+
         const interview = humanResource.scheduleInterview(interviewDate, getJavaCandidate());
 
         expect(interview._recruiter._id).toBe("101");

@@ -1,5 +1,6 @@
 module.exports = {
     collectCoverageFrom: ["src/**/*.{ts,tsx}"],
+    coverageDirectory: "coverage",
     coveragePathIgnorePatterns: ["index.ts"],
     moduleFileExtensions: ["js", "jsx", "node", "ts", "tsx"],
     testRegex: "src/.*\\.spec\\.(jsx?|tsx?)$",
