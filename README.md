@@ -43,7 +43,7 @@ We also talked about the **Published Language**, and we recognized how it can im
 
 ## Step 4
 
-Now let's look at checkRoom() method in Room class.
+Now let's look at `checkRoom()` method in class `Room`.
 
 1. What strategy do you propose to resolve the problems we mention in the comments?
 2. Discuss them with your colleagues and share your solutions with other groups...
