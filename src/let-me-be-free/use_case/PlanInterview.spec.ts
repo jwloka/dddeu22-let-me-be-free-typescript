@@ -55,32 +55,15 @@ describe("PlanInterview", () => {
         expect(isRecruiterBookedFor(interviewDate)).toBeTruthy();
     });
 
-    const isRecruiterBookedFor = (interviewDate: InterviewDate): boolean => {
-        return (
-            consultants
-                .findAll()
-                .filter(r => r.getId() === "101")
-                .flatMap(r => r.getAvailabilities())
-                .filter(availableDate => availableDate.equals(interviewDate)).length > 0
-        );
-    };
+    const isRecruiterBookedFor = (interviewDate: InterviewDate): boolean =>
+        consultants
+            .findAll()
+            .filter(r => r.getId() === "101")
+            .flatMap(r => r.getAvailabilities())
+            .filter(availableDate => availableDate.equals(interviewDate)).length > 0;
 
-    const getJavaCandidate = (): Profile => {
-        const java = new Candidate(
-            PROFILE_ID,
-            "",
-            "",
-            <Date>{},
-            <number>{},
-            ["Java"],
-            "",
-            "",
-            <Recruiter>{},
-            "",
-            false,
-            "",
-            new Map<string, object>()
+    const getJavaCandidate = (): Profile =>
+        new Profile(
+            new Candidate(PROFILE_ID, "", "", <Date>{}, <number>{}, ["Java"], "", "", <Recruiter>{}, "", false, "", new Map<string, object>())
         );
-        return new Profile(java);
-    };
 });
