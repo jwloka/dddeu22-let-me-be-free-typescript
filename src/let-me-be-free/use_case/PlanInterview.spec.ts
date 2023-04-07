@@ -55,15 +55,12 @@ describe("PlanInterview", () => {
         expect(isRecruiterBookedFor(interviewDate)).toBeTruthy();
     });
 
-    const isRecruiterBookedFor = (interviewDate: InterviewDate): boolean => {
-        return (
-            recruiters
-                .findAll()
-                .filter(r => r.getId() === "101")
-                .flatMap(r => r.getAvailabilities())
-                .filter(availableDate => availableDate.equals(interviewDate)).length > 0
-        );
-    };
+    const isRecruiterBookedFor = (interviewDate: InterviewDate): boolean =>
+        recruiters
+            .findAll()
+            .filter(r => r.getId() === "101")
+            .flatMap(r => r.getAvailabilities())
+            .filter(availableDate => availableDate.equals(interviewDate)).length > 0;
 
     const getJavaCandidate = (): HRCandidate => {
         const java = new Candidate(
