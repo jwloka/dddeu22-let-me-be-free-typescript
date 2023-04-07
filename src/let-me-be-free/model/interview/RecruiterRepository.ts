@@ -1,5 +1,5 @@
-import HRRecruiter from "./HRRecruiter";
+import { HRRecruiter } from "./HRRecruiter";
 
 export interface RecruiterRepository {
-  findAll: () => HRRecruiter[]
+    findAll: () => HRRecruiter[];
 }
