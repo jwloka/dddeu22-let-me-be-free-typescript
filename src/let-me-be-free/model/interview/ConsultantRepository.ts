@@ -1,5 +1,5 @@
-import Consultant from "./Consultant";
+import { Consultant } from "./Consultant";
 
 export interface ConsultantRepository {
-  findAll: () => Consultant[]
+    findAll: () => Consultant[];
 }

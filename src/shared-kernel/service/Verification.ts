@@ -1,6 +1,6 @@
-import Candidate from "../model/Candidate";
+import { Candidate } from "../model";
 
-export default interface Verification {
-  checkCandidate: (candidate: Candidate) => void;
-  checkInterviewDate: (interviewDate: Date) => void;
+export interface Verification {
+    checkCandidate: (candidate: Candidate) => void;
+    checkInterviewDate: (interviewDate: Date) => void;
 }

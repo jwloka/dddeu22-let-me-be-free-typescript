@@ -1,8 +1,7 @@
-import Verifier from "../../../shared-kernel/service/Verifier";
+import { Verifier } from "../../../shared-kernel";
 
-export default abstract class Validator<T>{
+export abstract class Validator<T> {
+    abstract check: (t: T) => void;
 
-  abstract check: (t: T) => void;
-
-  protected verifier = new Verifier();
+    protected verifier = new Verifier();
 }

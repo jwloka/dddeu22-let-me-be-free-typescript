@@ -1,7 +1,7 @@
-import InterviewDate from "./InterviewDate";
-import Room from "./Room";
+import { InterviewDate } from "./InterviewDate";
+import { Room } from "./Room";
 
 export interface RoomRepository {
-  book: (interviewDate: InterviewDate) => Room;
-  cancel: (spaceId: String) => void;
+    book: (interviewDate: InterviewDate) => Room;
+    cancel: (spaceId: string) => void;
 }
