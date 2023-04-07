@@ -1,14 +1,13 @@
-import Validator from "./Validator";
-import Profile from "./Profile";
+import { Profile } from "./Profile";
+import { Validator } from "./Validator";
 
-export default class ProfileValidator extends Validator<Profile> {
-  // @ts-ignore
-  check(profile: Profile): void {
-      try {
-        this.verifier.checkCandidate(profile.toCandidate());
-      }
-      catch(e){
-        throw "profile id is missing"
-      }
-  }
+export class ProfileValidator extends Validator<Profile> {
+    // @ts-ignore
+    check(profile: Profile): void {
+        try {
+            this.verifier.checkCandidate(profile.toCandidate());
+        } catch (e) {
+            throw "profile id is missing";
+        }
+    }
 }
