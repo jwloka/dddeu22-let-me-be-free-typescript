@@ -11,7 +11,7 @@ export class PlanInterview {
 
     public scheduleInterview(interviewDate: InterviewDate, profile: Profile): Interview | undefined {
         profile.checkProfile();
-        interviewDate.checkInterviewDate();
+        interviewDate.checkDate();
 
         const consultants = this._consultants.findAll();
         const consultant = profile.findConsultant(interviewDate, consultants);
