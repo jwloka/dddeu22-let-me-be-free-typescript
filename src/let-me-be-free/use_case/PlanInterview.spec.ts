@@ -6,12 +6,12 @@ const FUTURE_DATE_3 = new Date(new Date().setHours(0, 0, 0, 0) + 3 * (3600 * 100
 
 describe("PlanInterview", () => {
     const PROFILE_ID = "fake_id";
-    let humanResource: PlanInterview;
+    let testObj: PlanInterview;
     let consultants: ConsultantRepository;
     beforeEach(() => {
         consultants = new FakeConsultantRepository();
         const rooms = new FakeRoomRepository();
-        humanResource = new PlanInterview(consultants, rooms);
+        testObj = new PlanInterview(consultants, rooms);
     });
 
     it("should not schedule an interview for a candidate without identifier", () => {
@@ -21,7 +21,7 @@ describe("PlanInterview", () => {
         );
 
         expect(() => {
-            humanResource.scheduleInterview(interviewDate, candidateWithoutId);
+            testObj.scheduleInterview(interviewDate, candidateWithoutId);
         }).toThrow("profile id is missing");
     });
 
@@ -29,7 +29,7 @@ describe("PlanInterview", () => {
         expect(() => {
             const passedDate = new InterviewDate(new Date(2000, 12, 19));
 
-            humanResource.scheduleInterview(passedDate, getJavaCandidate());
+            testObj.scheduleInterview(passedDate, getJavaCandidate());
         }).toThrow("interview date is missing");
     });
 
@@ -37,21 +37,21 @@ describe("PlanInterview", () => {
         expect(() => {
             const interviewDate = new InterviewDate(new Date(2030, 1, 1));
 
-            humanResource.scheduleInterview(interviewDate, getJavaCandidate());
+            testObj.scheduleInterview(interviewDate, getJavaCandidate());
         }).toThrow("no consultant is available");
     });
 
     it("should plan interview with the first consultant who is available for the interview and can test the candidate", () => {
         const interviewDate = new InterviewDate(FUTURE_DATE_3);
 
-        const interview = humanResource.scheduleInterview(interviewDate, getJavaCandidate());
+        const interview = testObj.scheduleInterview(interviewDate, getJavaCandidate());
 
-        expect(interview.getConsultant().getId()).toBe("101");
-        expect(interview.getConsultant().getName()).toBe("Steve");
-        expect(interview.getConsultant().getFirstName()).toBe("Emma");
-        expect(interview.getProfile().getId()).toBe(PROFILE_ID);
-        expect(interview.getInterviewDate()).toBe(interviewDate);
-        expect(interview.getRoom().getAddress()).toBe("Room 2.1");
+        expect(interview!.getConsultant().getId()).toBe("101");
+        expect(interview!.getConsultant().getName()).toBe("Steve");
+        expect(interview!.getConsultant().getFirstName()).toBe("Emma");
+        expect(interview!.getProfile().getId()).toBe(PROFILE_ID);
+        expect(interview!.getInterviewDate()).toBe(interviewDate);
+        expect(interview!.getRoom().getAddress()).toBe("Room 2.1");
         expect(isRecruiterBookedFor(interviewDate)).toBeTruthy();
     });
 

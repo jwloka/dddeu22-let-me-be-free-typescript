@@ -36,14 +36,19 @@ The initial set of requirements for this use case are:
 4. if many Consultants can test with the Profile, the System will choose the first one
 5. the application should also find an available Room for the Interview Date
 
-## Resume of Step 0
+## Resume of Step 1
 
-We recognized that our application is polluted by the Shared Kernel data.
-As the Shared Kernel is **Upstream** and it's used by other **Downstream**
-systems (like HR System) we are not allowed to modify it. So, it's not possible
-for us to create behaviors in these shared objects and make this procedural code
-Object-oriented.
+When you go to a cash desk, and you should pay 10$ what do you do?
+Do you give your wallet to the cashier and ask him to find 10$ in it?
 
-## Step 1
+The idea of an **Anti-Corruption Layer (ACL)** is the same. It's about giving
+to the **Domain** just what it needs. We partially achieve this goal by
+creating new objects in our **Domain model**.
 
-1. Find a way to decouple the HR System from the Shared Kernel.
+## Step 2
+
+An ACL can do more. As you may have noticed the terms used in the **Shared Kernel**
+system do not match our **Ubiquitous Language (UL)**.
+
+1. Use our new objects and force them to respect our UL.
+2. Review our UL and translate our code to complete the ACL.

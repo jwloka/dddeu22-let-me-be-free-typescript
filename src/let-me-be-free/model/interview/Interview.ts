@@ -16,19 +16,19 @@ export class Interview {
         this._room = room;
     }
 
-    public getConsultant() {
+    public getConsultant(): Consultant {
         return this._consultant;
     }
 
-    public getProfile() {
+    public getProfile(): Profile {
         return this._profile;
     }
 
-    public getInterviewDate() {
+    public getInterviewDate(): InterviewDate {
         return this._interviewDate;
     }
 
-    public getRoom() {
+    public getRoom(): Room {
         return this._room;
     }
 }
