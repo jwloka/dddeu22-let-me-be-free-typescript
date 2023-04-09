@@ -25,5 +25,5 @@ export class FakeRoomRepository implements RoomRepository {
     }
 
     // eslint-disable-next-line @typescript-eslint/no-empty-function
-    cancel(spaceId: string): void {}
+    cancel(roomId: string): void {}
 }

@@ -55,19 +55,19 @@ package "shared-kernel.model" {
 }
 
 package "let-me-be-free.model.interview" {
-    interface RecruiterRepository {
-        +findAll(): HRRecruiter[]
+    interface ConsultantRepository {
+        +findAll(): Consultant[]
     }
 
     interface RoomRepository {
-        +book(date: InterviewDate): Space
-        +cancel(spaceId: string): void
+        +book(date: InterviewDate): Room
+        +cancel(roomId: string): void
     }
 
     class Interview {
         +_date: InterviewDate
-        + getRecruiter(): HRRecruiter
-        + getCandidate(): HRCandidate
+        + getConsultant(): Consultant
+        + getProfile(): Profile
         + getInterviewDate(): InterviewDate
         + getRoom(): Room
     }
@@ -87,10 +87,10 @@ package "let-me-be-free.model.interview" {
         +checkRoom(): void
     }
 
-    class HRRecruiter {
+    class Consultant {
         -_recruiter: Recruiter
         + isAvailable(interviewDate: InterviewDate): boolean
-        + canTest(candidate: HRCandidate): boolean
+        + canTest(profile: Profile): boolean
         + book(interviewDate: InterviewDate): void
         + getAvailabilities(): InterviewDate[]
         + getSkills(): string[]
@@ -99,22 +99,22 @@ package "let-me-be-free.model.interview" {
         + getFirstName(): string
     }
 
-    class HRCandidate {
+    class Profile {
         -_candidate: Candidate
         +getId(): string
         +getSkills(): string[]
-        +checkCandidate(): void | never
-        +findRecruiter(date: InterviewDate, recruiters: HRRecruiter[]): HRRecruiter | never
+        +checkProfile(): void | never
+        +findConsultant(interviewDate: InterviewDate, consultants: Consultant[]): Consultant | never {
 
     }
 
     class FakeRoomRepository extends RoomRepository {
-        +book(date: InterviewDate): Space
-        +cancel(spaceId: string): void
+        +book(date: InterviewDate): Room
+        +cancel(roomId: string): void
     }
 
-    class FakeRecruiterRepository extends RecruiterRepository {
-        +findAll(): HRRecruiter[]
+    class FakeConsultantRepository extends ConsultantRepository {
+        +findAll(): Consultant[]
     }
 
     FakeRecruiterRepository *--> "*" Recruiter : _recruiters
