@@ -25,7 +25,7 @@ export class HRCandidate {
     }
 
     public findRecruiter(interviewDate: InterviewDate, hrRecruiters: Array<HRRecruiter>): HRRecruiter | never {
-        const foundRecruiter = hrRecruiters.filter(recruiter => recruiter.isAvailable(interviewDate)).filter(recruiter => recruiter.canTest(this));
+        const foundRecruiter = hrRecruiters.filter(recruiter => recruiter.isAvailable(interviewDate) && recruiter.canTest(this));
 
         if (foundRecruiter.length <= 0) {
             throw "no recruiter is available";

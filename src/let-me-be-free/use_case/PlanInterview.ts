@@ -15,6 +15,7 @@ export class PlanInterview {
 
         const hrRecruiters = this._recruiters.findAll();
         const recruiter = candidate.findRecruiter(interviewDate, hrRecruiters);
+
         if (recruiter) {
             recruiter.book(interviewDate);
             const bookedRoom = new Room(this._rooms.book(interviewDate));

@@ -8,6 +8,7 @@ describe("PlanInterview", () => {
     const CANDIDATE_ID = "fake_id";
     let testObj: PlanInterview;
     let recruiters: RecruiterRepository;
+
     beforeEach(() => {
         recruiters = new FakeRecruiterRepository();
         const rooms = new FakeRoomRepository();

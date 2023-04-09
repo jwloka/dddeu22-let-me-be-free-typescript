@@ -10,7 +10,7 @@ export class HRRecruiter {
     }
 
     public isAvailable(interviewDate: InterviewDate): boolean {
-        return this._recruiter._availabilities.filter(date => new InterviewDate(date).equals(interviewDate)).length > 0;
+        return this._recruiter._availabilities.find(date => new InterviewDate(date).equals(interviewDate)) !== undefined;
     }
 
     public canTest(candidate: HRCandidate): boolean {
