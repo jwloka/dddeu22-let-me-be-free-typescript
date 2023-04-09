@@ -54,11 +54,11 @@ export class Recruiter {
         this._info = info;
     }
 
-    public getId() {
+    public getId(): string {
         return this._id;
     }
 
-    public getAvailabilities() {
+    public getAvailabilities(): Date[] {
         return this._availabilities;
     }
 }
