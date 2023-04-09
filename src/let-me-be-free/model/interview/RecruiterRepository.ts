@@ -1,5 +1,5 @@
-import { HRRecruiter } from "./HRRecruiter";
+import { Recruiter } from "../../../shared-kernel";
 
 export interface RecruiterRepository {
-    findAll: () => HRRecruiter[];
+    findAll: () => Recruiter[];
 }

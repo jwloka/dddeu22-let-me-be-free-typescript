@@ -1,34 +1,15 @@
-import { HRRecruiter } from "./HRRecruiter";
-import { HRCandidate } from "./HRCandidate";
-import { InterviewDate } from "./InterviewDate";
-import { Room } from "./Room";
+import { Candidate, Recruiter, Space } from "../../../shared-kernel";
 
 export class Interview {
-    public readonly _recruiter: HRRecruiter;
-    public readonly _candidate: HRCandidate;
-    public readonly _interviewDate: InterviewDate;
-    public readonly _room: Room;
+    public readonly _recruiter: Recruiter;
+    public readonly _candidate: Candidate;
+    public readonly _interviewDate: Date;
+    public readonly _room: Space;
 
-    constructor(recruiter: HRRecruiter, candidate: HRCandidate, interviewDate: InterviewDate, room: Room) {
+    constructor(recruiter: Recruiter, candidate: Candidate, interviewDate: Date, room: Space) {
         this._recruiter = recruiter;
         this._candidate = candidate;
         this._interviewDate = interviewDate;
         this._room = room;
-    }
-
-    public getRecruiter() {
-        return this._recruiter;
-    }
-
-    public getCandidate() {
-        return this._candidate;
-    }
-
-    public getInterviewDate() {
-        return this._interviewDate;
-    }
-
-    public getRoom() {
-        return this._room;
     }
 }

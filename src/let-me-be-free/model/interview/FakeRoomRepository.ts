@@ -1,12 +1,11 @@
 import { Recruiter, Space } from "../../../shared-kernel";
-import { InterviewDate } from "./InterviewDate";
 import { RoomRepository } from "./RoomRepository";
 
 export class FakeRoomRepository implements RoomRepository {
     private readonly FUTURE_DATE_1 = new Date(new Date().setHours(0, 0, 0, 0) + 3600 * 1000 * 24);
     private readonly FUTURE_DATE_2 = new Date(new Date().setHours(0, 0, 0, 0) + 2 * (3600 * 1000 * 24));
 
-    book(interviewDate: InterviewDate): Space {
+    book(interviewDate: Date): Space {
         return new Space(
             "",
             "",
