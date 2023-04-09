@@ -10,7 +10,7 @@ export class PlanInterview {
         this._rooms = rooms;
     }
 
-    public scheduleInterview(interviewDate: Date, candidate: Candidate) {
+    public scheduleInterview(interviewDate: Date, candidate: Candidate): Interview {
         this.checkCandidate(candidate);
         this.checkInterviewDate(interviewDate);
 
@@ -22,7 +22,7 @@ export class PlanInterview {
         return new Interview(appropriateRecruiter, candidate, interviewDate, bookedRoom);
     }
 
-    private checkRoom(bookedRoom: Space) {
+    private checkRoom(bookedRoom: Space): void {
         if (!(bookedRoom._capacity >= 2) || !bookedRoom._equipments.every(equipment => ["PC", "Monitor"].indexOf(equipment) != -1)) {
             // it's too complicated ...
             // cancel the room and find another room ? What if the new room is not appropriate again ?
@@ -32,7 +32,7 @@ export class PlanInterview {
         }
     }
 
-    private bookRecruiter(interviewDate: Date, appropriateRecruiter: Recruiter) {
+    private bookRecruiter(interviewDate: Date, appropriateRecruiter: Recruiter): void {
         this._recruiters
             .findAll()
             .filter(recruiter => recruiter._id === appropriateRecruiter._id)
@@ -56,13 +56,13 @@ export class PlanInterview {
         }
     }
 
-    private checkInterviewDate(interviewDate: Date) {
+    private checkInterviewDate(interviewDate: Date): void | never {
         if (!interviewDate || interviewDate <= new Date()) {
             throw "interview date is missing";
         }
     }
 
-    private checkCandidate(candidate: Candidate) {
+    private checkCandidate(candidate: Candidate): void | never {
         const candidateId = candidate._id;
         if (!candidateId) {
             throw "candidate id is missing";
