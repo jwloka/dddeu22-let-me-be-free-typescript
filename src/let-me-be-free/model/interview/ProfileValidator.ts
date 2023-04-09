@@ -2,11 +2,10 @@ import { Validator } from "./Validator";
 import { Profile } from "./Profile";
 
 export class ProfileValidator extends Validator<Profile> {
-    // @ts-ignore
     check(profile: Profile): void {
         try {
             this.verifier.checkCandidate(profile.toCandidate());
-        } catch (e) {
+        } catch (err) {
             throw "profile id is missing";
         }
     }

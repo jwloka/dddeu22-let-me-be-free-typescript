@@ -7,7 +7,7 @@ export class FakeRoomRepository implements RoomRepository {
     private readonly FUTURE_DATE_1 = new Date(new Date().setHours(0, 0, 0, 0) + 3600 * 1000 * 24);
     private readonly FUTURE_DATE_2 = new Date(new Date().setHours(0, 0, 0, 0) + 2 * (3600 * 1000 * 24));
 
-    book(interviewDate: InterviewDate): Room {
+    book(date: InterviewDate): Room {
         return new Room(
             new Space(
                 "",
@@ -25,5 +25,5 @@ export class FakeRoomRepository implements RoomRepository {
     }
 
     // eslint-disable-next-line @typescript-eslint/no-empty-function
-    cancel(spaceId: string): void {}
+    cancel(roomId: string): void {}
 }
