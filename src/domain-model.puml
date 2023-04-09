@@ -1,0 +1,98 @@
+@startuml name "Domain Model"
+
+package "shared-kernel.model" {
+    class Candidate {
+        +_id: string
+        +_name: string
+        +_firstName: string
+        +_dateOfBirth: Date
+        +_experience: number
+        +_skills: string[]
+        +_softSkills: string
+        +_cvPath: string
+        +_source: string
+        +_cooptation: boolean
+        +_coopter: string
+        +_info: Map<string, object>
+    }
+
+    class Recruiter {
+        +_id: string
+        +_name: string
+        +_firstName: string
+        +_dateOfBirth: Date
+        +_experience: number
+        +_skills: string[]
+        +_softSkills: string
+        +_availabilities: Date[]
+        +_iban: string
+        +_salary: number
+        +_address: string
+        +_seniority: Date
+        +_idCart: string
+        +_interviews: number
+        +_info: Map<string, object>
+    }
+
+    class Space {
+        +_id: string
+        +_name: string
+        +_location: string
+        +_capacity: number
+        +_address: string
+        +_equipments: string[]
+        +_participants: string
+        +_availabilities: Date[]
+        +_info: Map<string, object>
+    }
+
+    Space *--> Recruiter : _owner
+    Recruiter <--* Candidate : _inteviewer
+    Candidate "*" <--* Recruiter : _candidates
+}
+
+package "let-me-be-free.model.interview" {
+    interface RecruiterRepository {
+        +findAll: () => Recruiter[]
+    }
+
+    interface RoomRepository {
+        +book: (interviewDate: Date) => Space
+        +cancel: (spaceId: string) => void
+    }
+
+    class Interview {
+        +_interviewDate: Date
+    }
+
+    class FakeRoomRepository extends RoomRepository {
+        +book(interviewDate: Date): Space
+        +cancel(spaceId: string): void
+    }
+
+    class FakeRecruiterRepository extends RecruiterRepository {
+        +findAll(): Recruiter[]
+    }
+
+    FakeRecruiterRepository *--> "*" Recruiter : _recruiters
+    Interview *--> Recruiter : _recruiter
+    Interview *--> Candidate : _candidate
+    Interview *--> Space : _room
+}
+
+package "let-me-be-free.use_case" {
+    class PlanInterview {
+        +_recruiters: RecruiterRepository
+        +_rooms: RoomRepository
+        +scheduleInterview: (interviewDate: Date, candidate: Candidate) => Interview
+        -checkRoom: (bookedRoom: Space) => void
+        -bookRecruiter: (interviewDate: Date, appropriateRecruiter: Recruiter) => void
+        -findAnAppropriateRecruiter(interviewDate: Date, candidate: Candidate) => Recruiter
+        -checkInterviewDate: (interviewDate: Date) => void | never
+        -checkCandidate: (candidate: Candidate) => void | never
+    }
+
+    PlanInterview *--> RecruiterRepository : _recruiters
+    PlanInterview *--> RoomRepository : _rooms
+}
+@enduml
