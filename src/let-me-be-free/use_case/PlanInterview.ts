@@ -9,18 +9,18 @@ export class PlanInterview {
         this._rooms = rooms;
     }
 
-    public scheduleInterview(interviewDate: InterviewDate, candidate: HRCandidate) {
+    public scheduleInterview(interviewDate: InterviewDate, candidate: HRCandidate): Interview | undefined {
         candidate.checkCandidate();
-        interviewDate.checkInterviewDate();
+        interviewDate.checkDate();
 
         const hrRecruiters = this._recruiters.findAll();
         const recruiter = candidate.findRecruiter(interviewDate, hrRecruiters);
-        // @ts-ignore
-        recruiter.book(interviewDate);
-        const bookedRoom = new Room(this._rooms.book(interviewDate));
-        bookedRoom.checkRoom();
+        if (recruiter) {
+            recruiter.book(interviewDate);
+            const bookedRoom = new Room(this._rooms.book(interviewDate));
+            bookedRoom.checkRoom();
 
-        // @ts-ignore
-        return new Interview(recruiter, candidate, interviewDate, bookedRoom);
+            return new Interview(recruiter, candidate, interviewDate, bookedRoom);
+        }
     }
 }

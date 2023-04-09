@@ -9,28 +9,28 @@ export class HRCandidate {
         this._candidate = candidate;
     }
 
-    public getId() {
+    public getId(): string {
         return this._candidate._id;
     }
 
-    public getSkills() {
+    public getSkills(): string[] {
         return this._candidate._skills;
     }
 
-    public checkCandidate() {
+    public checkCandidate(): void | never {
         const candidateId = this._candidate._id;
         if (!candidateId) {
             throw "candidate id is missing";
         }
     }
 
-    public findRecruiter(interviewDate: InterviewDate, hrRecruiters: Array<HRRecruiter>) {
+    public findRecruiter(interviewDate: InterviewDate, hrRecruiters: Array<HRRecruiter>): HRRecruiter | never {
         const foundRecruiter = hrRecruiters.filter(recruiter => recruiter.isAvailable(interviewDate)).filter(recruiter => recruiter.canTest(this));
 
         if (foundRecruiter.length <= 0) {
             throw "no recruiter is available";
         } else {
-            return foundRecruiter.at(0);
+            return foundRecruiter[0];
         }
     }
 }
