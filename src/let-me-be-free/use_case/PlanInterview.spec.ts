@@ -6,13 +6,13 @@ const FUTURE_DATE_3 = new Date(new Date().setHours(0, 0, 0, 0) + 3 * (3600 * 100
 
 describe("PlanInterview", () => {
     const CANDIDATE_ID = "fake_id";
-    let humanResource: PlanInterview;
+    let testObj: PlanInterview;
     let recruiters: RecruiterRepository;
 
     beforeEach(() => {
         recruiters = new FakeRecruiterRepository();
         const rooms = new FakeRoomRepository();
-        humanResource = new PlanInterview(recruiters, rooms);
+        testObj = new PlanInterview(recruiters, rooms);
     });
 
     it("should not schedule an interview for a candidate without identifier", () => {
@@ -34,14 +34,14 @@ describe("PlanInterview", () => {
         );
 
         expect(() => {
-            humanResource.scheduleInterview(interviewDate, candidateWithoutId);
+            testObj.scheduleInterview(interviewDate, candidateWithoutId);
         }).toThrow("candidate id is missing");
     });
 
     it("should not schedule an interview when interview date is missing", () => {
         expect(() => {
             // @ts-expect-error null is an invalid input
-            humanResource.scheduleInterview(null, getJavaCandidate());
+            testObj.scheduleInterview(null, getJavaCandidate());
         }).toThrow("interview date is missing");
     });
 
@@ -49,7 +49,7 @@ describe("PlanInterview", () => {
         expect(() => {
             const passedDate = new Date(2000, 12, 19);
 
-            humanResource.scheduleInterview(passedDate, getJavaCandidate());
+            testObj.scheduleInterview(passedDate, getJavaCandidate());
         }).toThrow("interview date is missing");
     });
 
@@ -57,14 +57,14 @@ describe("PlanInterview", () => {
         expect(() => {
             const interviewDate = new Date(2030, 1, 1);
 
-            humanResource.scheduleInterview(interviewDate, getJavaCandidate());
+            testObj.scheduleInterview(interviewDate, getJavaCandidate());
         }).toThrow("no recruiter is available");
     });
 
     it("should plan an interview with the first recruiter who is available for the interview and can test the candidate", () => {
         const interviewDate = FUTURE_DATE_3;
 
-        const interview = humanResource.scheduleInterview(interviewDate, getJavaCandidate());
+        const interview = testObj.scheduleInterview(interviewDate, getJavaCandidate());
 
         expect(interview._recruiter._id).toBe("101");
         expect(interview._recruiter._name).toBe("Steve");
