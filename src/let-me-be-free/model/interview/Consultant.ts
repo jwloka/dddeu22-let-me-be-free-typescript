@@ -1,6 +1,6 @@
 import { Recruiter } from "../../../shared-kernel";
-import { Profile } from "./Profile";
 import { InterviewDate } from "./InterviewDate";
+import { Profile } from "./Profile";
 
 export class Consultant {
     private readonly _recruiter: Recruiter;

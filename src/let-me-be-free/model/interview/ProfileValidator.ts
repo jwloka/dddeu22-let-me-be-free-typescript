@@ -1,5 +1,5 @@
-import { Validator } from "./Validator";
 import { Profile } from "./Profile";
+import { Validator } from "./Validator";
 
 export class ProfileValidator extends Validator<Profile> {
     check(profile: Profile): void {

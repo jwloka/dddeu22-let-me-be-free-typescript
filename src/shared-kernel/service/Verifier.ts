@@ -1,5 +1,5 @@
-import { Verification } from "./Verification";
 import { Candidate } from "../model";
+import { Verification } from "./Verification";
 
 export class Verifier implements Verification {
     checkCandidate(candidate: Candidate): void | never {
