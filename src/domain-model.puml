@@ -54,6 +54,18 @@ package "shared-kernel.model" {
     Candidate "*" <--* Recruiter : _candidates
 }
 
+package "shared-kernel.service" {
+    interface Verification {
+        checkCandidate(candidate: Candidate): void | never
+        checkInterviewDate(interviewDate: Date): void | never
+    }
+
+    class Verifier extends Verification {
+        checkCandidate(candidate: Candidate): void | never
+        checkInterviewDate(interviewDate: Date): void | never
+    }
+}
+
 package "let-me-be-free.model.interview" {
     interface ConsultantRepository {
         +findAll(): Consultant[]
@@ -73,10 +85,22 @@ package "let-me-be-free.model.interview" {
     }
 
     class InterviewDate {
-        -_date: Date;
+        -_date: Date
         + getDate(): Date
-        + checkDate(): void | never
         + equals(other: InterviewDate): boolean 
+    }
+
+    abstract class Validator<T> {
+        # verifier: Verifier
+        abstract check(t: T): void
+    }
+
+    class InterviewDateValidator extends Validator {
+        check(interviewDate: InterviewDate): void
+    }
+
+    class ProfileValidator extends Validator {
+        check(profile: Profile): void
     }
 
     class Room {
@@ -103,8 +127,8 @@ package "let-me-be-free.model.interview" {
         -_candidate: Candidate
         +getId(): string
         +getSkills(): string[]
-        +checkProfile(): void | never
-        +findConsultant(interviewDate: InterviewDate, consultants: Consultant[]): Consultant | never {
+        +findConsultant(interviewDate: InterviewDate, consultants: Consultant[]): Consultant | never
+        +toCandidate(): Candidate
 
     }
 
