@@ -3,21 +3,21 @@ import { Consultant } from "./Consultant";
 import { InterviewDate } from "./InterviewDate";
 
 export class Profile {
-    private readonly _profile: Candidate;
+    private readonly _candidate: Candidate;
 
     constructor(candidate: Candidate) {
-        this._profile = candidate;
+        this._candidate = candidate;
     }
 
     public getId(): string {
-        return this._profile._id;
+        return this._candidate._id;
     }
 
     public getSkills(): string[] {
-        return this._profile._skills;
+        return this._candidate._skills;
     }
 
-    public findConsultant(interviewDate: InterviewDate, consultants: Array<Consultant>): Consultant | never {
+    public findConsultant(interviewDate: InterviewDate, consultants: Consultant[]): Consultant | never {
         const foundConsultant = consultants
             .filter(consultant => consultant.isAvailable(interviewDate))
             .filter(consultant => consultant.canTest(this));
@@ -30,6 +30,6 @@ export class Profile {
     }
 
     public toCandidate(): Candidate {
-        return this._profile;
+        return this._candidate;
     }
 }
