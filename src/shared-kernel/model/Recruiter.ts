@@ -53,12 +53,4 @@ export class Recruiter {
         this._interviews = interviews;
         this._info = info;
     }
-
-    public getId(): string {
-        return this._id;
-    }
-
-    public getAvailabilities(): Date[] {
-        return this._availabilities;
-    }
 }

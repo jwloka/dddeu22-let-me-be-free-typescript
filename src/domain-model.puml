@@ -32,9 +32,6 @@ package "shared-kernel.model" {
         +_idCart: string
         +_interviews: number
         +_info: Map<string, object>
-        +getId(): string
-        +getAvailabilities(): Date[]
-
     }
 
     class Space {
