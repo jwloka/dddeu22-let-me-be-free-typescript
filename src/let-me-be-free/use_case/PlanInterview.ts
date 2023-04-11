@@ -9,7 +9,7 @@ export class PlanInterview {
         this._rooms = rooms;
     }
 
-    public scheduleInterview(interviewDate: InterviewDate, profile: Profile) {
+    public scheduleInterview(interviewDate: InterviewDate, profile: Profile): Interview | undefined {
         const profileValidator = new ProfileValidator();
         profileValidator.check(profile);
         const interviewDateValidator = new InterviewDateValidator();
@@ -17,13 +17,13 @@ export class PlanInterview {
 
         const consultants = this._consultants.findAll();
         const consultant = profile.findConsultant(interviewDate, consultants);
-        // @ts-ignore
-        consultant.book(interviewDate);
-        const bookedRoom = this._rooms.book(interviewDate);
+        if (consultant) {
+            consultant.book(interviewDate);
+            const bookedRoom = this._rooms.book(interviewDate);
 
-        bookedRoom.checkRoom();
+            bookedRoom.checkRoom();
 
-        // @ts-ignore
-        return new Interview(consultant, profile, interviewDate, bookedRoom);
+            return new Interview(consultant, profile, interviewDate, bookedRoom);
+        }
     }
 }

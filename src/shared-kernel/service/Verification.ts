@@ -1,6 +1,6 @@
 import { Candidate } from "../model";
 
 export interface Verification {
-    checkCandidate: (candidate: Candidate) => void;
-    checkInterviewDate: (interviewDate: Date) => void;
+    checkCandidate: (candidate: Candidate) => void | never;
+    checkInterviewDate: (interviewDate: Date) => void | never;
 }

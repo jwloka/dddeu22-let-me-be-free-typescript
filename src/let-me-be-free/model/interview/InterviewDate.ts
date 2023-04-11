@@ -1,15 +1,15 @@
 export class InterviewDate {
-    private readonly _interviewDate: Date;
+    private readonly _date: Date;
 
-    constructor(interviewDate: Date) {
-        this._interviewDate = interviewDate;
+    constructor(date: Date) {
+        this._date = date;
     }
 
-    public getInterviewDate() {
-        return this._interviewDate;
+    public getDate(): Date {
+        return this._date;
     }
 
-    public equals(interviewDate: InterviewDate) {
-        return interviewDate._interviewDate.getTime() == this._interviewDate.getTime();
+    public equals(other: InterviewDate): boolean {
+        return other._date.getTime() == this._date.getTime();
     }
 }
