@@ -13,8 +13,8 @@ export class Consultant {
         return this._recruiter._availabilities.filter(date => new InterviewDate(date).equals(interviewDate)).length > 0;
     }
 
-    public canTest(candidate: Profile): boolean {
-        return candidate.getSkills().every(skill => this._recruiter._skills.indexOf(skill) != -1);
+    public canTest(profile: Profile): boolean {
+        return profile.getSkills().every(skill => this._recruiter._skills.indexOf(skill) != -1);
     }
 
     public book(interviewDate: InterviewDate): void {
