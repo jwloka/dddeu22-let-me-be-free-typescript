@@ -337,7 +337,9 @@ TODOs:
 
 <style scoped>
 img {
-  width: 100%;
+  width: 120%;
+  position: absolute;
+  left: -1px;
 }
 </style>
 
