@@ -61,6 +61,8 @@ package "shared-kernel.service" {
         checkCandidate(candidate: Candidate): void | never
         checkInterviewDate(interviewDate: Date): void | never
     }
+
+    Verification -> Candidate
 }
 
 package "let-me-be-free.model.interview" {
@@ -74,7 +76,6 @@ package "let-me-be-free.model.interview" {
     }
 
     class Interview {
-        +_date: InterviewDate
         + getConsultant(): Consultant
         + getProfile(): Profile
         + getInterviewDate(): InterviewDate
@@ -88,7 +89,6 @@ package "let-me-be-free.model.interview" {
     }
 
     abstract class Validator<T> {
-        # verifier: Verifier
         abstract check(t: T): void
     }
 
@@ -101,7 +101,6 @@ package "let-me-be-free.model.interview" {
     }
 
     class Room {
-        +_room: Space
         +getCapacity(): number
         +getEquipments(): string[]
         +getAddress(): string
@@ -109,7 +108,6 @@ package "let-me-be-free.model.interview" {
     }
 
     class Consultant {
-        -_recruiter: Recruiter
         + isAvailable(interviewDate: InterviewDate): boolean
         + canTest(profile: Profile): boolean
         + book(interviewDate: InterviewDate): void
@@ -121,7 +119,6 @@ package "let-me-be-free.model.interview" {
     }
 
     class Profile {
-        -_candidate: Candidate
         +getId(): string
         +getSkills(): string[]
         +findConsultant(interviewDate: InterviewDate, consultants: Consultant[]): Consultant | never
@@ -138,20 +135,28 @@ package "let-me-be-free.model.interview" {
         +findAll(): Consultant[]
     }
 
-    FakeRecruiterRepository *--> "*" Recruiter : _recruiters
-    Interview *--> Recruiter : _recruiter
-    Interview *--> Candidate : _candidate
-    Interview *--> Space : _room
+    ConsultantRepository --> "*" Consultant
+    RoomRepository --> "*" Room
+    FakeConsultantRepository *--> "*" Recruiter : _recruiters
+    FakeRoomRepository --> Space
+    Room *--> Space : _space
+    Profile *--> Candidate : _candidate
+    Interview *--> Profile : _profile
+    Interview *--> Consultant : _consultant
+    Interview *--> Room : _room
+    Interview *--> InterviewDate : _interviewDate
+    Consultant *--> Recruiter : _recruiter
+    Validator *-> Verifier
+    ProfileValidator --> Profile
+    InterviewDateValidator --> InterviewDate
 }
 
 package "let-me-be-free.use_case" {
     class PlanInterview {
-        +_recruiters: RecruiterRepository
-        +_rooms: RoomRepository
         +scheduleInterview(interviewDate: Date, candidate: Candidate): Interview
     }
 
-    PlanInterview *--> RecruiterRepository : _recruiters
+    PlanInterview *--> ConsultantRepository : _consultants
     PlanInterview *--> RoomRepository : _rooms
 }
 @enduml
