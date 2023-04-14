@@ -46,12 +46,12 @@ describe("PlanInterview", () => {
 
         const interview = testObj.scheduleInterview(interviewDate, getJavaCandidate());
 
-        expect(interview.getConsultant().getId()).toBe("101");
-        expect(interview.getConsultant().getName()).toBe("Steve");
-        expect(interview.getConsultant().getFirstName()).toBe("Emma");
-        expect(interview.getProfile().getId()).toBe(PROFILE_ID);
-        expect(interview.getInterviewDate()).toBe(interviewDate);
-        expect(interview.getRoom().getAddress()).toBe("Room 2.1");
+        expect(interview!.getConsultant().getId()).toBe("101");
+        expect(interview!.getConsultant().getName()).toBe("Steve");
+        expect(interview!.getConsultant().getFirstName()).toBe("Emma");
+        expect(interview!.getProfile().getId()).toBe(PROFILE_ID);
+        expect(interview!.getInterviewDate()).toBe(interviewDate);
+        expect(interview!.getRoom().getAddress()).toBe("Room 2.1");
         expect(isRecruiterBookedFor(interviewDate)).toBeTruthy();
     });
 
