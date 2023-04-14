@@ -3,44 +3,44 @@ import { InterviewDate } from "./InterviewDate";
 import { Profile } from "./Profile";
 
 export class Consultant {
-    private readonly _consultant: Recruiter;
+    private readonly _recruiter: Recruiter;
 
     constructor(recruiter: Recruiter) {
-        this._consultant = recruiter;
+        this._recruiter = recruiter;
     }
 
-    public isAvailable(interviewDate: InterviewDate) {
-        return this._consultant._availabilities.filter(date => new InterviewDate(date).equals(interviewDate)).length > 0;
+    public isAvailable(interviewDate: InterviewDate): boolean {
+        return this._recruiter._availabilities.filter(date => new InterviewDate(date).equals(interviewDate)).length > 0;
     }
 
-    public canTest(profile: Profile) {
-        return profile.getSkills().every(skill => this._consultant._skills.indexOf(skill) != -1);
+    public canTest(profile: Profile): boolean {
+        return profile.getSkills().every(skill => this._recruiter._skills.indexOf(skill) != -1);
     }
 
-    public book(interviewDate: InterviewDate) {
-        const index = this._consultant._availabilities.indexOf(interviewDate.getInterviewDate(), 0);
+    public book(interviewDate: InterviewDate): void {
+        const index = this._recruiter._availabilities.indexOf(interviewDate.getInterviewDate(), 0);
         if (index > -1) {
-            this._consultant._availabilities.splice(index, 1);
+            this._recruiter._availabilities.splice(index, 1);
         }
     }
 
-    public getAvailabilities() {
-        return this._consultant._availabilities.map(date => new InterviewDate(date));
+    public getAvailabilities(): InterviewDate[] {
+        return this._recruiter._availabilities.map(date => new InterviewDate(date));
     }
 
-    public getSkills() {
-        return this._consultant._skills;
+    public getSkills(): string[] {
+        return this._recruiter._skills;
     }
 
-    public getId() {
-        return this._consultant._id;
+    public getId(): string {
+        return this._recruiter._id;
     }
 
-    public getName() {
-        return this._consultant._name;
+    public getName(): string {
+        return this._recruiter._name;
     }
 
-    public getFirstName() {
-        return this._consultant._firstName;
+    public getFirstName(): string {
+        return this._recruiter._firstName;
     }
 }
