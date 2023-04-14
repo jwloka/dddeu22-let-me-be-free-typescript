@@ -18,7 +18,7 @@ export class Consultant {
     }
 
     public book(interviewDate: InterviewDate): void {
-        const index = this._recruiter._availabilities.indexOf(interviewDate.getInterviewDate(), 0);
+        const index = this._recruiter._availabilities.indexOf(interviewDate.getDate(), 0);
         if (index > -1) {
             this._recruiter._availabilities.splice(index, 1);
         }
