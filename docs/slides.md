@@ -172,7 +172,7 @@ code {
 </style>
 
 * Clone this project
-`git clone git@github.com:ksouf/dddeu22-let-me-be-free-typescript.git`
+`git clone git@github.com:quatico-solutions/dddeu22-let-me-be-free-typescript.git`
 * Build the project:
   * `yarn install`
   * `yarn dist` —> pass w/ successful tests
