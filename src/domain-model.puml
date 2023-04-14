@@ -62,7 +62,6 @@ package "let-me-be-free.model.interview" {
     }
 
     class Interview {
-        +_date: InterviewDate
         + getRecruiter(): HRRecruiter
         + getCandidate(): HRCandidate
         + getInterviewDate(): InterviewDate
@@ -77,7 +76,6 @@ package "let-me-be-free.model.interview" {
     }
 
     class Room {
-        +_room: Space
         +getCapacity(): number
         +getEquipments(): string[]
         +getAddress(): string
@@ -85,7 +83,6 @@ package "let-me-be-free.model.interview" {
     }
 
     class HRRecruiter {
-        -_recruiter: Recruiter
         + isAvailable(interviewDate: InterviewDate): boolean
         + canTest(candidate: HRCandidate): boolean
         + book(interviewDate: InterviewDate): void
@@ -97,7 +94,6 @@ package "let-me-be-free.model.interview" {
     }
 
     class HRCandidate {
-        -_candidate: Candidate
         +getId(): string
         +getSkills(): string[]
         +checkCandidate(): void | never
@@ -114,10 +110,15 @@ package "let-me-be-free.model.interview" {
         +findAll(): HRRecruiter[]
     }
 
+    FakeRoomRepository --> Space
     FakeRecruiterRepository *--> "*" Recruiter : _recruiters
-    Interview *--> Recruiter : _recruiter
-    Interview *--> Candidate : _candidate
-    Interview *--> Space : _room
+    HRCandidate *--> Candidate : _candidate
+    HRRecruiter *--> Recruiter : _recruiter
+    Interview *--> InterviewDate : _interviewDate
+    Interview *--> HRRecruiter : _recruiter
+    Interview *--> HRCandidate : _candidate
+    Interview *--> Room : _room
+    Room *--> Space : _room
 }
 
 package "let-me-be-free.use_case" {
