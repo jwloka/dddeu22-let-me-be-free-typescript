@@ -46,11 +46,11 @@ Workshop to practice context mapping patterns <br> used in the strategic design 
 
 ---
 
-## A Context Map
+## Context Maps
 
-* Describes the contact between **Bounded Contexts** and teams
+* Describe the contact between **Bounded Contexts** and teams
 * Can be a chart, or any written document.
-* Level of detail may vary.
+* Level of detail may vary
 * Everyone on the project shares and understands it
 * Helps the developers to take strategic decisions
 * Utilize a collection of patterns
