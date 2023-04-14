@@ -62,7 +62,6 @@ package "let-me-be-free.model.interview" {
     }
 
     class Interview {
-        +_date: InterviewDate
         + getConsultant(): Consultant
         + getProfile(): Profile
         + getInterviewDate(): InterviewDate
@@ -77,7 +76,6 @@ package "let-me-be-free.model.interview" {
     }
 
     class Room {
-        +_room: Space
         +getCapacity(): number
         +getEquipments(): string[]
         +getAddress(): string
@@ -85,7 +83,6 @@ package "let-me-be-free.model.interview" {
     }
 
     class Consultant {
-        -_recruiter: Recruiter
         + isAvailable(interviewDate: InterviewDate): boolean
         + canTest(profile: Profile): boolean
         + book(interviewDate: InterviewDate): void
@@ -97,7 +94,6 @@ package "let-me-be-free.model.interview" {
     }
 
     class Profile {
-        -_candidate: Candidate
         +getId(): string
         +getSkills(): string[]
         +checkProfile(): void | never
@@ -114,20 +110,25 @@ package "let-me-be-free.model.interview" {
         +findAll(): Consultant[]
     }
 
-    FakeRecruiterRepository *--> "*" Recruiter : _recruiters
-    Interview *--> Recruiter : _recruiter
-    Interview *--> Candidate : _candidate
-    Interview *--> Space : _room
+    FakeConsultantRepository *--> "*" Recruiter : _recruiters
+    FakeRoomRepository --> Space
+    RoomRepository --> Room
+    ConsultantRepository --> Consultant
+    Interview *--> Consultant : _consultant
+    Interview *--> Profile : _profile
+    Interview *--> InterviewDate : _interviewDate
+    Interview *--> Room : _room
+    Consultant *--> Recruiter : _recruiter
+    Profile *--> Candidate : _candidate
+    Room *--> Space : _space
 }
 
 package "let-me-be-free.use_case" {
     class PlanInterview {
-        +_recruiters: RecruiterRepository
-        +_rooms: RoomRepository
         +scheduleInterview(interviewDate: Date, candidate: Candidate): Interview
     }
 
-    PlanInterview *--> RecruiterRepository : _recruiters
+    PlanInterview *--> ConsultantRepository : _consultants
     PlanInterview *--> RoomRepository : _rooms
 }
 @enduml
