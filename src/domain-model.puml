@@ -1,0 +1,162 @@
+@startuml name "Domain Model"
+
+package "shared-kernel.model" {
+    class Candidate {
+        +_id: string
+        +_name: string
+        +_firstName: string
+        +_dateOfBirth: Date
+        +_experience: number
+        +_skills: string[]
+        +_softSkills: string
+        +_cvPath: string
+        +_source: string
+        +_cooptation: boolean
+        +_coopter: string
+        +_info: Map<string, object>
+    }
+
+    class Recruiter {
+        +_id: string
+        +_name: string
+        +_firstName: string
+        +_dateOfBirth: Date
+        +_experience: number
+        +_skills: string[]
+        +_softSkills: string
+        +_availabilities: Date[]
+        +_iban: string
+        +_salary: number
+        +_address: string
+        +_seniority: Date
+        +_idCart: string
+        +_interviews: number
+        +_info: Map<string, object>
+    }
+
+    class Space {
+        +_id: string
+        +_name: string
+        +_location: string
+        +_capacity: number
+        +_address: string
+        +_equipments: string[]
+        +_participants: string
+        +_availabilities: Date[]
+        +_info: Map<string, object>
+    }
+
+    Space *--> Recruiter : _owner
+    Recruiter <--* Candidate : _inteviewer
+    Candidate "*" <--* Recruiter : _candidates
+}
+
+package "shared-kernel.service" {
+    interface Verification {
+        checkCandidate(candidate: Candidate): void | never
+        checkInterviewDate(interviewDate: Date): void | never
+    }
+
+    class Verifier extends Verification {
+        checkCandidate(candidate: Candidate): void | never
+        checkInterviewDate(interviewDate: Date): void | never
+    }
+
+    Verification -> Candidate
+}
+
+package "let-me-be-free.model.interview" {
+    interface ConsultantRepository {
+        +findAll(): Consultant[]
+    }
+
+    interface RoomRepository {
+        +book(date: InterviewDate): Room
+        +cancel(roomId: string): void
+    }
+
+    class Interview {
+        + getConsultant(): Consultant
+        + getProfile(): Profile
+        + getInterviewDate(): InterviewDate
+        + getRoom(): Room
+    }
+
+    class InterviewDate {
+        -_date: Date
+        + getDate(): Date
+        + equals(other: InterviewDate): boolean 
+    }
+
+    abstract class Validator<T> {
+        abstract check(t: T): void
+    }
+
+    class InterviewDateValidator extends Validator {
+        check(interviewDate: InterviewDate): void
+    }
+
+    class ProfileValidator extends Validator {
+        check(profile: Profile): void
+    }
+
+    class Room {
+        +getCapacity(): number
+        +getEquipments(): string[]
+        +getAddress(): string
+        +checkRoom(): void
+    }
+
+    class Consultant {
+        + isAvailable(interviewDate: InterviewDate): boolean
+        + canTest(profile: Profile): boolean
+        + book(interviewDate: InterviewDate): void
+        + getAvailabilities(): InterviewDate[]
+        + getSkills(): string[]
+        + getId(): string
+        + getName(): string
+        + getFirstName(): string
+    }
+
+    class Profile {
+        +getId(): string
+        +getSkills(): string[]
+        +findConsultant(interviewDate: InterviewDate, consultants: Consultant[]): Consultant | never
+        +toCandidate(): Candidate
+
+    }
+
+    class FakeRoomRepository extends RoomRepository {
+        +book(date: InterviewDate): Room
+        +cancel(roomId: string): void
+    }
+
+    class FakeConsultantRepository extends ConsultantRepository {
+        +findAll(): Consultant[]
+    }
+
+    ConsultantRepository --> "*" Consultant
+    RoomRepository --> "*" Room
+    FakeConsultantRepository *--> "*" Recruiter : _recruiters
+    FakeRoomRepository --> Space
+    Room *--> Space : _space
+    Profile *--> Candidate : _candidate
+    Interview *--> Profile : _profile
+    Interview *--> Consultant : _consultant
+    Interview *--> Room : _room
+    Interview *--> InterviewDate : _interviewDate
+    Consultant *--> Recruiter : _recruiter
+    Validator *-> Verifier
+    ProfileValidator --> Profile
+    InterviewDateValidator --> InterviewDate
+}
+
+package "let-me-be-free.use_case" {
+    class PlanInterview {
+        +scheduleInterview(interviewDate: Date, candidate: Candidate): Interview
+    }
+
+    PlanInterview *--> ConsultantRepository : _consultants
+    PlanInterview *--> RoomRepository : _rooms
+}
+@enduml
