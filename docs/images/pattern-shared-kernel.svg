@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xl="http://www.w3.org/1999/xlink" viewBox="11.5 179 557.5 218.05505" width="557.5" height="218.05505">
+  <defs>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -4 10 8" markerWidth="10" markerHeight="8" color="black">
+      <g>
+        <path d="M 8 0 L 0 -3 L 0 3 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+  </defs>
+  <g id="Shared_Kernel" fill="none" stroke="none" stroke-opacity="1" stroke-dasharray="none" fill-opacity="1">
+    <title>Shared Kernel</title>
+    <rect fill="white" x="11.5" y="179" width="557.5" height="218.05505"/>
+    <g id="Shared_Kernel_Layer_1">
+      <title>Layer 1</title>
+      <g id="Graphic_12">
+        <ellipse cx="95.25" cy="288.02752" rx="63.2501010672949" ry="37.5275829010799" fill="#ffda7d"/>
+        <ellipse cx="95.25" cy="288.02752" rx="63.2501010672949" ry="37.5275829010799" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(49.65 265.49553)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="14" fill="black" x="17.480998" y="13">Interview</tspan>
+          <tspan font-family="Helvetica Neue" font-size="14" fill="black" x="18.502998" y="29.392">Planning</tspan>
+          <tspan font-family="Helvetica Neue" font-size="10" fill="black" x="1.4249985" y="42.783997">«Bounded Context»</tspan>
+        </text>
+      </g>
+      <g id="Graphic_11">
+        <path d="M 279.5 246.52752 L 318.9991 246.52752 C 330.0448 246.52752 338.9991 255.48183 338.9991 266.52752 L 338.9991 309.52752 C 338.9991 320.5732 330.0448 329.52752 318.9991 329.52752 L 279.5 329.52752 C 268.4543 329.52752 259.5 320.5732 259.5 309.52752 L 259.5 266.52752 C 259.5 255.48183 268.4543 246.52752 279.5 246.52752 Z" fill="#a8e8ff"/>
+        <path d="M 279.5 246.52752 L 318.9991 246.52752 C 330.0448 246.52752 338.9991 255.48183 338.9991 266.52752 L 338.9991 309.52752 C 338.9991 320.5732 330.0448 329.52752 318.9991 329.52752 L 279.5 329.52752 C 268.4543 329.52752 259.5 320.5732 259.5 309.52752 L 259.5 266.52752 C 259.5 255.48183 268.4543 246.52752 279.5 246.52752 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(264.5 273.69152)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="12" fill="black" x="15.633554" y="11">Shared</tspan>
+          <tspan font-family="Helvetica Neue" font-size="12" fill="black" x="22.191554" y="25.336">Data</tspan>
+        </text>
+      </g>
+      <g id="Graphic_10">
+        <ellipse cx="485.25" cy="237.02752" rx="63.250101067295" ry="37.5275829010799" fill="white"/>
+        <ellipse cx="485.25" cy="237.02752" rx="63.250101067295" ry="37.5275829010799" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(439.65 214.49553)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="14" fill="black" x="14.610998" y="13">Employee </tspan>
+          <tspan font-family="Helvetica Neue" font-size="14" fill="black" x="21.225998" y="29.392">Training</tspan>
+          <tspan font-family="Helvetica Neue" font-size="10" fill="black" x="1.4249985" y="42.783997">«Bounded Context»</tspan>
+        </text>
+      </g>
+      <g id="Graphic_9">
+        <ellipse cx="485.25" cy="339.02752" rx="63.250101067295" ry="37.52758290108" fill="white"/>
+        <ellipse cx="485.25" cy="339.02752" rx="63.250101067295" ry="37.52758290108" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(439.65 324.69152)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="14" fill="black" x="11.117998" y="13">Talent Pool</tspan>
+          <tspan font-family="Helvetica Neue" font-size="10" fill="black" x="1.4249985" y="26.391998">«Bounded Context»</tspan>
+        </text>
+      </g>
+      <g id="Line_8">
+        <line x1="158.50003" y1="288.02752" x2="249.6" y2="288.02752" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_7">
+        <path d="M 421.99997 237.02752 L 396.0742 237.02752 L 396.0742 288.02752 L 348.8991 288.02752" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_6">
+        <path d="M 421.99997 339.02752 L 396 339.02752 L 396 288.02752 L 348.8991 288.02752" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_5">
+        <rect x="164.17068" y="270.73745" width="53.89" height="34.58014" fill="white"/>
+        <text transform="translate(169.17068 275.73745)" fill="black">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="10" fill="black" x="1.39" y="10">depends </tspan>
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="10" fill="black" x="15.925" y="22.29007">on</tspan>
+        </text>
+      </g>
+      <g id="Graphic_4">
+        <circle cx="299.24955" cy="288.02752" r="71.2501138505101" stroke="#00abff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Graphic_3">
+        <rect x="381.2852" y="270.73745" width="53.89" height="34.58014" fill="white"/>
+        <text transform="translate(386.2852 275.73745)" fill="black">
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="10" fill="black" x="1.39" y="10">depends </tspan>
+          <tspan font-family="Helvetica Neue" font-weight="bold" font-size="10" fill="black" x="15.925" y="22.29007">on</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>

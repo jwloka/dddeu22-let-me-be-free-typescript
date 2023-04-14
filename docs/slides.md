@@ -1,17 +1,17 @@
 ---
 marp: true
-title: Strategic Design Patterns of DDD
+title: Strategic Design Patterns in Domain-Driven Design
 paginate: true
 theme: gaia
 _class: invert
+footer: Jan Wloka «[jan.wloka@quatico.com](jan.wloka@quatico.com)» &nbsp; —  &nbsp; Strategic Design Patterns in DDD
 ---
 
-# Strategic Design Patterns <br> of DDD
+# Strategic Design Patterns <br> in DDD
 
 <style scoped>
-{
-  background: #788197 !important;
-}
+{ background: #788197 !important; }
+footer { display: none; }
 h2 {
     font-size: 20px;
     font-weight: normal;
@@ -21,9 +21,14 @@ h2 {
 }
 </style>
 
-Workshop to practice context mapping patterns <br> used in the strategic design of DDD.
+Workshop to practice context mapping patterns <br> used in the strategic design of Domain-Driven Design.
 
-## Credits: All content is based on the workshop of [Sepehr Namdar and Khaled Souf](https://github.com/ksouf/dddeu22-let-me-be-free-typescript) "Let Me be free"
+<br />
+
+**Jan Wloka**
+[jan.wloka@quatico.com](jan.wloka@quatico.com)
+
+## **Credits**: All content is based on the workshop of [Sepehr Namdar and Khaled Souf](https://github.com/ksouf/dddeu22-let-me-be-free-typescript) "Let Me be free"
 
 ---
 
@@ -89,14 +94,14 @@ The business application helps HR to manage interviews. Interviews are scheduled
 5. Application should also find an available Room for the Interview Date
 
 ---
-
-## HR System: Ubiquitous Language
-
 <style scoped>
+footer { display: none; }
 ul {
-  font-size: 30px;
+font-size: 30px;
 }
 </style>
+
+## HR System: Ubiquitous Language
 
 * **Consultant**: A technical member of the company that should match the Profile of a Candidate
 * **Profile**: Resume of the Candidate
@@ -110,25 +115,22 @@ ul {
 
 ## HR System: Context Map
 
-![](./images/bounded-contexts.png)
+![w:800px center](./images/bounded-contexts.svg)
 
 ---
+<style scoped>
+footer { display: none; }
+</style>
 
 ## Let's look at the code (Step-0)
 
-<style scoped>
-img {
-  width: 100%;
-}
-</style>
-
-![](./images/domain-model-step-0.png)
+![w:1000px center](./images/domain-model-step-0.png)
 
 ---
 
 ## Pattern “Shared Kernel”
 
-![](./images/pattern-shared-kernel.png)
+![w:800px center](./images/pattern-shared-kernel.svg)
 
 Overlap connected contexts through a “Shared Kernel”
 
@@ -148,7 +150,7 @@ Overlap connected contexts through a “Shared Kernel”
 
 ## Pattern “Customer/Supplier”
 
-![](./images/pattern-customer-supplier.png)
+![w:700px center](./images/pattern-customer-supplier.svg)
 
 Connect related contexts via "customer/supplier"
 
@@ -164,12 +166,6 @@ Connect related contexts via "customer/supplier"
 ---
 
 ## Getting Started: With the code
-
-<style scoped>
-code {
-  font-size: 30px;
-}
-</style>
 
 * Clone this project
 `git clone git@github.com:quatico-solutions/dddeu22-let-me-be-free-typescript.git`
@@ -192,19 +188,15 @@ systems (like HR System)
 1. **TODO:** Find a way to decouple the HR System from the Shared Kernel.
 
 ---
-
-## Pattern “Anti-Corruption Layer (ACL)"
-
 <style scoped>
-img {
-  width: 70%;
-}
 p {
-  font-size: 30px;
+    font-size: 30px;
 }
 </style>
 
-![](./images/pattern-anti-corruption-layer.png)
+## Pattern “Anti-Corruption Layer (ACL)"
+
+![w:700px center](./images/pattern-anti-corruption-layer.svg)
 
 Two-way translator between two domains and languages: Communicates with the external model using the external language, not the client's.
 
@@ -231,16 +223,17 @@ The idea of an **Anti-Corruption Layer (ACL)** is the same. It's about giving to
 **Show your results!**
 
 ---
-
-## Let's look at the code (Step-1)
-
 <style scoped>
+footer { display: none; }
 img {
-  width: 100%;
+    position: absolute;
+    left: -10px;
 }
 </style>
 
-![](./images/domain-model-step-1.png)
+## Let's look at the code (Step-1)
+
+![w:1300px center](./images/domain-model-step-1.png)
 
 ---
 
@@ -256,14 +249,14 @@ TODOs:
 2. Review our UL and translate our code to complete the ACL.
 
 ---
-
-## HR System: Ubiquitous Language (Reminder)
-
 <style scoped>
+footer { display: none; }
 ul {
-  font-size: 30px;
+    font-size: 30px;
 }
 </style>
+
+## HR System: Ubiquitous Language (Reminder)
 
 * **Consultant**: A technical member of the company that should match the Profile of a Candidate
 * **Profile**: Resume of the Candidate
@@ -278,12 +271,14 @@ ul {
 ## Let's look at the code (Step-2)
 
 <style scoped>
+footer { display: none; }
 img {
-  width: 100%;
+    position: absolute;
+    left: -10px;
 }
 </style>
 
-![](./images/domain-model-step-2.png)
+![w:1300px center](./images/domain-model-step-2.png)
 
 ---
 
@@ -299,13 +294,7 @@ There are other strategies to discover...
 
 ## Pattern “Open Host Service” (OHS)
 
-<style scoped>
-img {
-  width: 60%;
-}
-</style>
-
-![](./images/pattern-open-host-service.png)
+![w:700px center](./images/pattern-open-host-service.svg)
 
 Multiple (downstream) clients that implement the same services.
 
@@ -332,18 +321,17 @@ TODOs:
 1. Try to extract these services out of the application and put them in an **Open Host Service (OHS)**.
 
 ---
-
-## Let's look at the code (Step-3)
-
 <style scoped>
+footer { display: none; }
 img {
-  width: 120%;
-  position: absolute;
-  left: -1px;
+    position: absolute;
+    left: -1px;
 }
 </style>
 
-![](./images/domain-model-step-3.png)
+## Let's look at the code (Step-3)
+
+![w:1500px center](./images/domain-model-step-3.png)
 
 ---
 
@@ -359,13 +347,13 @@ We’ve also talked about the **Published Language**, and we recognized how it c
 
 ## Next Step: What to do with Room Booking?
 
-![](./images/room-service.png)
+![w:800px center](./images/room-service.svg)
 
 ---
 
 ## Pattern “Conformist”
 
-![](./images/pattern-conformist.png)
+![w:700px center](./images/pattern-conformist.svg)
 
 Overlap two contexts one-sided with "Conformist"
 
@@ -382,7 +370,7 @@ Overlap two contexts one-sided with "Conformist"
 
 ## Pattern “Separate Ways”
 
-![](./images/pattern-separate-ways.png)
+![w:700px center](./images/pattern-separate-ways.svg)
 
 If you cannot collaborate at all, go separate ways.
 
@@ -416,13 +404,27 @@ TODOs:
 
 The Domain evolves, and Context Mapping Strategies can help to change the system along the way.
 
-*"if the architecture of the organization is at odds with the architecture of the system, the architecture of the organization wins."* — Ruth Malan - Architect
+*"if the architecture of the organization is at odds with the architecture of the system, the architecture of the organization wins."* — Ruth Malan, Architect
+
+---
+<style scoped>
+footer { display: none; }
+img {
+    width: 100%;
+    position: absolute;
+    top: -150px;
+    left: 0px;
+}
+</style>
+
+![](./images/thank-you.png)
 
 <style>
- {
+{
     background: white;
 }
-img {
-  width: 80%;
+img[alt~="center"] {
+    display: block;
+    margin: 0 auto;
 }
 </style>

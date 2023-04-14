@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xl="http://www.w3.org/1999/xlink" viewBox="129 644 542.7754 338.05505" width="542.7754" height="338.05505">
+  <defs>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -4 10 8" markerWidth="10" markerHeight="8" color="black">
+      <g>
+        <path d="M 8 0 L 0 -3 L 0 3 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker_2" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -4 10 8" markerWidth="10" markerHeight="8" color="black">
+      <g>
+        <path d="M 8 0 L 0 -3 L 0 3 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+  </defs>
+  <g id="Room_Service" fill="none" stroke="none" stroke-opacity="1" stroke-dasharray="none" fill-opacity="1">
+    <title>Room Service</title>
+    <rect fill="white" x="129" y="644" width="542.7754" height="338.05505"/>
+    <g id="Room_Service_Layer_1">
+      <title>Layer 1</title>
+      <g id="Graphic_15">
+        <path d="M 591.77626 775.0572 L 631.2754 775.0572 C 642.3211 775.0572 651.2754 784.0115 651.2754 795.0572 L 651.2754 830.1123 C 651.2754 841.158 642.3211 850.1123 631.2754 850.1123 L 591.77626 850.1123 C 580.73057 850.1123 571.77626 841.158 571.77626 830.1123 L 571.77626 795.0572 C 571.77626 784.0115 580.73057 775.0572 591.77626 775.0572 Z" fill="#a8e8ff"/>
+        <path d="M 591.77626 775.0572 L 631.2754 775.0572 C 642.3211 775.0572 651.2754 784.0115 651.2754 795.0572 L 651.2754 830.1123 C 651.2754 841.158 642.3211 850.1123 631.2754 850.1123 L 591.77626 850.1123 C 580.73057 850.1123 571.77626 841.158 571.77626 830.1123 L 571.77626 795.0572 C 571.77626 784.0115 580.73057 775.0572 591.77626 775.0572 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(576.77626 798.2488)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="12" fill="black" x="15.633554" y="11">Shared</tspan>
+          <tspan font-family="Helvetica Neue" font-size="12" fill="black" x="22.191554" y="25.336">Data</tspan>
+        </text>
+      </g>
+      <g id="Graphic_14">
+        <path d="M 584.4667 844.1695 L 563.7167 844.1695 C 553.3417 844.1695 542.9667 836.2733 542.9667 812.5848 C 542.9667 788.8962 553.3417 781 563.7167 781 L 584.4667 781 Z" fill="#5ec0ff"/>
+        <path d="M 584.4667 844.1695 L 563.7167 844.1695 C 553.3417 844.1695 542.9667 836.2733 542.9667 812.5848 C 542.9667 788.8962 553.3417 781 563.7167 781 L 584.4667 781 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(547.9667 806.4448)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="10" fill="black" x="5.1" y="10">OHS</tspan>
+        </text>
+      </g>
+      <g id="Graphic_13">
+        <ellipse cx="400.75" cy="702.0275" rx="63.2501010672949" ry="37.52758290108" fill="#ffda7d"/>
+        <ellipse cx="400.75" cy="702.0275" rx="63.2501010672949" ry="37.52758290108" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(355.15 679.4955)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="14" fill="black" x="17.480998" y="13">Interview</tspan>
+          <tspan font-family="Helvetica Neue" font-size="14" fill="black" x="18.502998" y="29.392">Planning</tspan>
+          <tspan font-family="Helvetica Neue" font-size="10" fill="black" x="1.4249985" y="42.783997">«Bounded Context»</tspan>
+        </text>
+      </g>
+      <g id="Graphic_12">
+        <ellipse cx="400.75" cy="813.0275" rx="63.2501010672949" ry="37.5275829010799" fill="white"/>
+        <ellipse cx="400.75" cy="813.0275" rx="63.2501010672949" ry="37.5275829010799" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(355.15 790.4955)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="14" fill="black" x="14.610998" y="13">Employee </tspan>
+          <tspan font-family="Helvetica Neue" font-size="14" fill="black" x="21.225998" y="29.392">Training</tspan>
+          <tspan font-family="Helvetica Neue" font-size="10" fill="black" x="1.4249985" y="42.783997">«Bounded Context»</tspan>
+        </text>
+      </g>
+      <g id="Graphic_11">
+        <ellipse cx="400.75" cy="924.0275" rx="63.2501010672949" ry="37.5275829010801" fill="white"/>
+        <ellipse cx="400.75" cy="924.0275" rx="63.2501010672949" ry="37.5275829010801" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(355.15 909.6915)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="14" fill="black" x="11.117998" y="13">Talent Pool</tspan>
+          <tspan font-family="Helvetica Neue" font-size="10" fill="black" x="1.4249985" y="26.391998">«Bounded Context»</tspan>
+        </text>
+      </g>
+      <g id="Line_10">
+        <path d="M 464.00003 702.0275 L 512.121 702.0275 L 512.121 812.5848 L 533.0667 812.5848" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_9">
+        <path d="M 464.00003 813.0275 L 474.00003 813.0275 L 489.91244 812.7244 L 533.10434 812.7244" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_8">
+        <path d="M 464.00003 924.0275 L 512.2017 924.0275 L 512.2017 812.5848 L 533.0667 812.5848" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_6">
+        <text transform="translate(499.69825 684.83775)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="10" fill="black" x="4365397e-19" y="10">D</tspan>
+        </text>
+      </g>
+      <g id="Graphic_5">
+        <text transform="translate(530.30076 795.4199)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="10" fill="black" x="58220095e-20" y="10">U</tspan>
+        </text>
+      </g>
+      <g id="Graphic_4">
+        <text transform="translate(469 795.4199)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="10" fill="black" x="4365397e-19" y="10">D</tspan>
+        </text>
+      </g>
+      <g id="Graphic_3">
+        <text transform="translate(469 906.8821)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="10" fill="black" x="4365397e-19" y="10">D</tspan>
+        </text>
+      </g>
+      <g id="Graphic_2">
+        <path d="M 452.6798 739.55505 L 473.4298 739.55505 C 483.8048 739.55505 494.1798 730.1732 494.1798 702.0275 C 494.1798 673.8819 483.8048 664.5 473.4298 664.5 L 452.6798 664.5 Z" fill="#ffbe00"/>
+        <path d="M 452.6798 739.55505 L 473.4298 739.55505 C 483.8048 739.55505 494.1798 730.1732 494.1798 702.0275 C 494.1798 673.8819 483.8048 664.5 473.4298 664.5 L 452.6798 664.5 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(457.6798 695.8875)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="10" fill="black" x="6.12" y="10">ACL</tspan>
+        </text>
+      </g>
+      <g id="Graphic_16">
+        <ellipse cx="212.75" cy="702.0275" rx="63.250101067295" ry="37.52758290108" fill="#c0c0ff"/>
+        <ellipse cx="212.75" cy="702.0275" rx="63.250101067295" ry="37.52758290108" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(167.15 679.4955)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="14" fill="black" x="26.798" y="13">Room </tspan>
+          <tspan font-family="Helvetica Neue" font-size="14" fill="black" x="19.671998" y="29.392">Booking</tspan>
+          <tspan font-family="Helvetica Neue" font-size="10" fill="black" x="1.4249985" y="42.783997">«Bounded Context»</tspan>
+        </text>
+      </g>
+      <g id="Line_17">
+        <line x1="337.49997" y1="702.0275" x2="285.90003" y2="702.0275" marker-end="url(#FilledArrow_Marker_2)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+    </g>
+  </g>
+</svg>

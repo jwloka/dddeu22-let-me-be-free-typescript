@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xl="http://www.w3.org/1999/xlink" viewBox="15.423744 88.12919 479.57626 257.92586" width="479.57626" height="257.92586">
+  <defs>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -4 10 8" markerWidth="10" markerHeight="8" color="black">
+      <g>
+        <path d="M 8 0 L 0 -3 L 0 3 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+  </defs>
+  <g id="Open_Host_Service_(OHS)" fill="none" stroke="none" stroke-opacity="1" stroke-dasharray="none" fill-opacity="1">
+    <title>Open Host Service (OHS)</title>
+    <rect fill="white" x="15.423744" y="88.12919" width="479.57626" height="257.92586"/>
+    <g id="Open_Host_Service_(OHS)_Layer_1">
+      <title>Layer 1</title>
+      <g id="Graphic_11">
+        <path d="M 235.2 108.62919 L 274.6991 108.62919 C 285.7448 108.62919 294.6991 117.58349 294.6991 128.62919 L 294.6991 163.68423 C 294.6991 174.72993 285.7448 183.68423 274.6991 183.68423 L 235.2 183.68423 C 224.1543 183.68423 215.2 174.72993 215.2 163.68423 L 215.2 128.62919 C 215.2 117.58349 224.1543 108.62919 235.2 108.62919 Z" fill="#a8e8ff"/>
+        <path d="M 235.2 108.62919 L 274.6991 108.62919 C 285.7448 108.62919 294.6991 117.58349 294.6991 128.62919 L 294.6991 163.68423 C 294.6991 174.72993 285.7448 183.68423 274.6991 183.68423 L 235.2 183.68423 C 224.1543 183.68423 215.2 174.72993 215.2 163.68423 L 215.2 128.62919 C 215.2 117.58349 224.1543 108.62919 235.2 108.62919 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(220.2 131.82071)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="12" fill="black" x="15.633554" y="11">Shared</tspan>
+          <tspan font-family="Helvetica Neue" font-size="12" fill="black" x="22.191554" y="25.336">Data</tspan>
+        </text>
+      </g>
+      <g id="Graphic_26">
+        <path d="M 286.5343 169.62919 L 286.5343 186.37919 C 286.5343 194.75419 278.63812 203.12919 254.94956 203.12919 C 231.261 203.12919 223.3648 194.75419 223.3648 186.37919 L 223.3648 169.62919 Z" fill="#5ec0ff"/>
+        <path d="M 286.5343 169.62919 L 286.5343 186.37919 C 286.5343 194.75419 278.63812 203.12919 254.94956 203.12919 C 231.261 203.12919 223.3648 194.75419 223.3648 186.37919 L 223.3648 169.62919 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(238.19956 180.23919)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="10" fill="black" x="6.1" y="10">OHS</tspan>
+        </text>
+      </g>
+      <g id="Graphic_12">
+        <ellipse cx="99.17374" cy="288.02752" rx="63.2501010672949" ry="37.5275829010799" fill="#ffda7d"/>
+        <ellipse cx="99.17374" cy="288.02752" rx="63.2501010672949" ry="37.5275829010799" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(53.573744 265.49553)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="14" fill="black" x="17.480998" y="13">Interview</tspan>
+          <tspan font-family="Helvetica Neue" font-size="14" fill="black" x="18.502998" y="29.392">Planning</tspan>
+          <tspan font-family="Helvetica Neue" font-size="10" fill="black" x="1.4249985" y="42.783997">«Bounded Context»</tspan>
+        </text>
+      </g>
+      <g id="Graphic_10">
+        <ellipse cx="255.21187" cy="288.02752" rx="63.2501010672949" ry="37.5275829010799" fill="white"/>
+        <ellipse cx="255.21187" cy="288.02752" rx="63.2501010672949" ry="37.5275829010799" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(209.61187 265.49553)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="14" fill="black" x="14.610998" y="13">Employee </tspan>
+          <tspan font-family="Helvetica Neue" font-size="14" fill="black" x="21.225998" y="29.392">Training</tspan>
+          <tspan font-family="Helvetica Neue" font-size="10" fill="black" x="1.4249985" y="42.783997">«Bounded Context»</tspan>
+        </text>
+      </g>
+      <g id="Graphic_9">
+        <ellipse cx="411.25" cy="288.02752" rx="63.250101067295" ry="37.5275829010799" fill="white"/>
+        <ellipse cx="411.25" cy="288.02752" rx="63.250101067295" ry="37.5275829010799" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(365.65 273.69152)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="14" fill="black" x="11.117998" y="13">Talent Pool</tspan>
+          <tspan font-family="Helvetica Neue" font-size="10" fill="black" x="1.4249985" y="26.391998">«Bounded Context»</tspan>
+        </text>
+      </g>
+      <g id="Line_8">
+        <path d="M 99.17374 229.5 L 99.17374 225.92638 L 254.94956 225.92638 L 254.94956 213.02919" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_7">
+        <line x1="255.21187" y1="250.49998" x2="255.00438" y2="213.02903" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_6">
+        <path d="M 411.25 250.49998 L 411.25 225.90952 L 254.94956 225.90952 L 254.94956 213.02919" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_20">
+        <text transform="translate(261.4 238.11)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="10" fill="black" x="4365397e-19" y="10">D</tspan>
+        </text>
+      </g>
+      <g id="Graphic_21">
+        <text transform="translate(262 205.4292)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="10" fill="black" x="58220095e-20" y="10">U</tspan>
+        </text>
+      </g>
+      <g id="Graphic_22">
+        <text transform="translate(146 245)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="10" fill="black" x="4365397e-19" y="10">D</tspan>
+        </text>
+      </g>
+      <g id="Graphic_23">
+        <text transform="translate(417.2 238.11)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="10" fill="black" x="4365397e-19" y="10">D</tspan>
+        </text>
+      </g>
+      <g id="Graphic_25">
+        <path d="M 136.70127 259 L 136.70127 244.25 C 136.70127 236.875 127.31939 229.5 99.17374 229.5 C 71.0281 229.5 61.64622 236.875 61.64622 244.25 L 61.64622 259 Z" fill="#ffbe00"/>
+        <path d="M 136.70127 259 L 136.70127 244.25 C 136.70127 236.875 127.31939 229.5 99.17374 229.5 C 71.0281 229.5 61.64622 236.875 61.64622 244.25 L 61.64622 259 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(84.42374 238.11)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="10" fill="black" x="5.12" y="10">ACL</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>

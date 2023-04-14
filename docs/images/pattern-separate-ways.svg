@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xl="http://www.w3.org/1999/xlink" viewBox="15.423744 230 415.07626 116.05505" width="415.07626" height="116.05505">
+  <defs/>
+  <g id="Separate_Ways" fill="none" stroke="none" stroke-opacity="1" stroke-dasharray="none" fill-opacity="1">
+    <title>Separate Ways</title>
+    <rect fill="white" x="15.423744" y="230" width="415.07626" height="116.05505"/>
+    <g id="Separate_Ways_Layer_1">
+      <title>Layer 1</title>
+      <g id="Graphic_12">
+        <ellipse cx="99.17374" cy="288.02752" rx="63.2501010672949" ry="37.5275829010799" fill="#ffda7d"/>
+        <ellipse cx="99.17374" cy="288.02752" rx="63.2501010672949" ry="37.5275829010799" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(53.573744 265.49553)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="14" fill="black" x="17.480998" y="13">Interview</tspan>
+          <tspan font-family="Helvetica Neue" font-size="14" fill="black" x="18.502998" y="29.392">Planning</tspan>
+          <tspan font-family="Helvetica Neue" font-size="10" fill="black" x="1.4249985" y="42.783997">«Bounded Context»</tspan>
+        </text>
+      </g>
+      <g id="Graphic_10">
+        <ellipse cx="346.75" cy="288.02752" rx="63.250101067295" ry="37.5275829010799" fill="white"/>
+        <ellipse cx="346.75" cy="288.02752" rx="63.250101067295" ry="37.5275829010799" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(301.15 273.69152)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="14" fill="black" x="3.7329985" y="13">Irreconcilable </tspan>
+          <tspan font-family="Helvetica Neue" font-size="10" fill="black" x="1.4249985" y="26.391998">«Bounded Context»</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>
