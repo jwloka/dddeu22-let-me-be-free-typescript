@@ -123,8 +123,6 @@ package "let-me-be-free.model.interview" {
 
 package "let-me-be-free.use_case" {
     class PlanInterview {
-        +_recruiters: RecruiterRepository
-        +_rooms: RoomRepository
         +scheduleInterview(interviewDate: Date, candidate: Candidate): Interview
     }
 
